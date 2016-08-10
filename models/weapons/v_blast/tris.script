@@ -1,0 +1,13 @@
+// Looks like .script files aren't cumulative...
+md2mesh.0
+{
+	glow models/weapons/v_blast/od_blasterglow.tga wave sin .8 .2 0 10
+}
+
+// Skin for Invisibility mode.
+md2mesh.1
+{
+	noshadow
+	alphatest
+}  
+

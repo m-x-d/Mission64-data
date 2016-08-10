@@ -1,0 +1,12 @@
+// Looks like .script files aren't cumulative...
+md2mesh.0
+{
+	glow models/weapons/v_bfg/kman_bfgglow.tga wave sin 0 0.5 0 0.6
+}
+
+// Skin for Invisibility mode.
+md2mesh.1
+{
+	noshadow
+	alphatest
+}

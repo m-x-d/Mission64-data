@@ -1,0 +1,12 @@
+//0 	Standard footstep	   	5 	Tile
+//1 	Metal 	   						6 	Grass
+//2 	Dirt 	   							7 	Snow
+//3 	Vent 	   							8 	Carpet
+//4 	Grate 	   						9 	Force field
+1 /metal
+1 /crate
+1 floor1
+1 floor3
+2 /rock
+4 /grate
+6 /gras

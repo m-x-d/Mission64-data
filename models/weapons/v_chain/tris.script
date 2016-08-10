@@ -1,0 +1,6 @@
+// Skin for Invisibility mode.
+md2mesh.1
+{
+	noshadow
+	alphatest
+}
