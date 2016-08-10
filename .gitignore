@@ -1,2 +1,7 @@
 /kmq2config.cfg
 /save
+/maps/*.prt
+/maps/*.max
+/maps/*.map
+/maps/*.jmx
+/maps/*.bsp
