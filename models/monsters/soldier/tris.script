@@ -1,0 +1,22 @@
+// Infantry skins:
+// 0: models/monsters/soldier/skin_lt.pcx
+// 1: models/monsters/soldier/skin_ltp.pcx
+// 2: models/monsters/soldier/skin.pcx
+// 3: models/monsters/soldier/pain.pcx
+// 4: models/monsters/soldier/skin_ss.pcx
+// 5: models/monsters/soldier/skin_ssp.pcx
+
+md2mesh.0
+{
+	glow models/monsters/soldier/skin_lt_glow.tga identity
+}
+
+md2mesh.2
+{
+	glow models/monsters/soldier/skin_glow.tga identity
+}
+
+md2mesh.4
+{
+	glow models/monsters/soldier/skin_ss_glow.tga identity
+}
