@@ -6,5 +6,8 @@ Mission 64 is a Quake 2 for Nintendo 64 recreation attempt for KMQuake 2 engine 
 Usage:
 Extract "mission64" folder from the archive into your Quake 2 folder, then use "mission64/Launch.bat" to play.
 
+Known issues:
+For some users the mod crashes during startup, unless KMQuake 2 is launched with administrator privileges.
+
 Credits:
-sky_ascend01 skybox by Z(Rus) and JadrienC: http://gamebanana.com/textures/3775
+sky_ascend01 skybox by Z(Rus) and JadrienC (http://gamebanana.com/textures/3775).
