@@ -1093,6 +1093,8 @@
 	spawnflags(Flags) =
 	[
 		1 : "Toggle" : 0
+		2 : "Custom" : 0
+		4 : "Loop" : 0
 	]
 	speed(integer) : "Speed"
 	message(string) : "start/end light level"
