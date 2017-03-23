@@ -319,6 +319,13 @@
 	_minlight(integer) : "Minimum light (optional)"
 ]
 
+//mxd
+@SolidClass base(func_door) color(0 128 204) = func_door_dh : "Door"
+[
+	pathtarget(string) : "Pathtarget>origin at runtime"
+	move_origin(string) : "Brush origin"
+]
+
 @SolidClass base(Appearflags, Targetname, Target) color(0 128 204) = func_door_rotating : "Rotating Door"
 [
 	spawnflags(Flags) =
@@ -963,6 +970,77 @@
 	]
 	killtarget(string) : "Kill Target"
 	delay(integer) : "Trigger delay (if activated)" : 1
+]
+
+//
+// TARGET_EFFECT
+@PointClass base(Appearflags, Targetname, Angles1, Movewith) color(255 0 0) size(-8 -8 -8, 8 8 8) = target_effect : "Calls an effect when used"
+[
+	spawnflags(Flags) =
+	[
+		1 : "Looped On" : 0
+		2 : "Looped Off" : 0
+	]
+	style(choices) : "Effect type" : 0 =
+	[
+		0 : "0>Gunshot"
+		1 : "1>Blood"
+		2 : "2>Blaster"
+		3 : "3>Railtrail"
+		4 : "4>Shotgun"
+		5 : "5>Explosion1"
+		6 : "6>Explosion2"
+		7 : "7>Rocket explosion"
+		8 : "8>Grenade explosion"
+		9 : "9>Sparks"
+		10 : "10>Splash"
+		11 : "11>Bubbletrail"
+		12 : "12>Screen sparks"
+		13 : "13>Shield sparks"
+		14 : "14>Bullet sparks"
+		15 : "15>Laser sparks"
+		16 : "16>Parasite attack"
+		17 : "17>Rocket expl (water)"
+		18 : "18>Grenade expl (water)"
+		19 : "19>Medic cable attack"
+		20 : "20>BFG explosion"
+		21 : "21>BFG big explosion"
+		22 : "22>BossTport"
+		23 : "23>BFG laser"
+		24 : "24>Grapple cable"
+		25 : "25>Welding sparks"
+		26 : "26>GreenBlood"
+		28 : "28>Plasma explosion"
+		29 : "29>Tunnel sparks"
+		30 : "30>Blaster2"
+		33 : "33>Lightning"
+		34 : "34>Debugtrail"
+		35 : "35>Plain explosion"
+		36 : "36>Flashlight"
+		38 : "38>Heatbeam"
+		39 : "39>Monster heatbeam"
+		40 : "40>Steam"
+		41 : "41>Bubbletrail2"
+		42 : "42>MoreBlood"
+		43 : "43>Heatbeam sparks"
+		44 : "44>Heatbeam steam"
+		45 : "45>Chainfist smoke"
+		46 : "46>Electric sparks"
+		47 : "47>Tracker explosion"
+		48 : "48>Teleport effect"
+		49 : "49>DBall goal"
+		50 : "50>WidowBeamOut"
+		51 : "51>NukeBlast"
+		52 : "52>WidowSplash"
+		53 : "53>Explosion1 Big"
+		54 : "54>Explosion1 NP"
+		55 : "55>Flechette"
+	]
+	target(string) : "Target"
+	sounds(integer) : "Sounds>splash or pallete index"
+	count(integer) : "Count>pixels/splash (1-255)"
+	wait(integer) : "Wait>steam duration"
+	speed(integer) : "Speed>steam speed"
 ]
 
 @PointClass base(Appearflags, Targetname) color(255 0 0) size(-8 -8 -8, 8 8 8) iconsprite("sprites/target_earthquake.spr") = target_earthquake : "Level wide earthquake"
