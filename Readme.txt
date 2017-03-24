@@ -16,4 +16,5 @@ sky_ascend01 skybox by Z(Rus) and JadrienC (http://gamebanana.com/textures/3775)
 
 Sounds:
 world/data_transfer.wav - made from "ZX Spectrum reading a tape" sound by are16ocean (http://freesound.org/people/are16ocean/sounds/128783/).
+world/steam_hit1.wav - made from "Bicycle pump" sound by Michaelvelo (https://freesound.org/people/Michaelvelo/sounds/366814/).
 

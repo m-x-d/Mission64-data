@@ -712,6 +712,15 @@
 	]
 ]
 
+//mxd
+@PointClass base(Appearflags) color(255 128 0) studio("models/monsters/parasite/tris.md2") size(-16 -16 0, 16 16 16) = misc_deadparasite : "Dead Parasite"
+[
+	spawnflags(Flags) =
+	[
+		64 : "Spawn flies" : 0
+	]
+]
+
 // The following three entities are eye-candy - they don't do anything
 @PointClass base(Appearflags) color(255 128 0) size(-32 -32 -16, 32 32 32) = misc_eastertank : "Tank Pimp" []
 @PointClass base(Appearflags) color(255 128 0) size(-32 -32 0, 32 32 32) = misc_easterchick : "Chick #1" []
@@ -747,11 +756,45 @@
 
 @PointClass base(Appearflags, Targetname) color(255 128 0) studio("models/objects/satellite/tris.md2") size(-64 -64 0, 64 64 128) = misc_satellite_dish : "Satellite Dish" []
 
-@PointClass base(Appearflags, Targetname) color(255 128 0) studio("models/ships/strogg1/tris.md2") size(-16 -16 0, 16 16 32) = misc_strogg_ship : "Strogg ship for flybys"
+//
+// MISC_STROGG_SHIP
+@PointClass base(Appearflags, Targetname, Angles, Speed100) studio("models/ships/strogg1/tris.md2") color(255 128 0) size(-16 -16 0, 16 16 32) = misc_strogg_ship : "Strogg ship for flybys"
 [
-	target(string) : "First path target"
-	speed(integer) : "Speed"
-	
+	spawnflags(Flags) =
+	[
+		1 : "Start On" : 0
+		8 : "Rotate" : 0
+		128 : "Smooth" : 0
+	]
+	target(string) : "Target>first path_corner"
+	health(integer) : "Health" : 0
+	mass(integer) : "Sebris mass" : 1200
+	dmg(integer) : "Explosion damage" : 200
+	deathtarget(string) : "Deathtarget>trigger ent at destruction"
+	pitch_speed(string) : "Pitch_Speed>deg/sec"
+	yaw_speed(string) : "Yaw_Speed>deg/sec" 
+	roll_speed(string) : "Roll_Speed>deg/sec"
+	salpha(string) : "Salpha>transparency (between 0 and 1 exclusive)"
+]
+
+//
+// MISC_STROGG_SHIP_ORIGIN
+@PointClass base(Appearflags, Targetname, Angles, Speed100) studio("models/ships/strogg1/tris.md2") color(255 128 0) size(-16 -16 0, 16 16 32) = misc_strogg_ship_origin : "Strogg ship for flybys (origin variant)"
+[
+	spawnflags(Flags) =
+	[
+		1 : "Start On" : 0
+		8 : "Rotate" : 0
+		128 : "Smooth" : 0
+	]
+	target(string) : "Target>first path_corner"
+	health(integer) : "Health" : 0
+	mass(integer) : "Debris mass" : 1200
+	dmg(integer) : "Explosion damage" : 200
+	deathtarget(string) : "Deathtarget>trigger ent at destruction"
+	pitch_speed(string) : "Pitch_Speed>deg/sec"
+	yaw_speed(string) : "Yaw_Speed>deg/sec" 
+	roll_speed(string) : "Roll_Speed>deg/sec"
 ]
 
 // place teleporter units 10 units into a brush to get rid of teleport pad
@@ -974,7 +1017,7 @@
 
 //
 // TARGET_EFFECT
-@PointClass base(Appearflags, Targetname, Angles1, Movewith) color(255 0 0) size(-8 -8 -8, 8 8 8) = target_effect : "Calls an effect when used"
+@PointClass base(Appearflags, Targetname, Angles1, Movewith) flags(Angle) color(255 0 0) size(-8 -8 -8, 8 8 8) = target_effect : "Calls an effect when used"
 [
 	spawnflags(Flags) =
 	[
