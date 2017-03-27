@@ -12,7 +12,8 @@ For some users the mod crashes during startup, unless KMQuake 2 is launched with
 Credits:
 
 Skyboxes:
-sky_ascend01 skybox by Z(Rus) and JadrienC (http://gamebanana.com/textures/3775).
+ascend - "sky_ascend" by Z(Rus) and JadrienC (http://gamebanana.com/textures/3775).
+galaxy - "Milky way galaxy" by Komaokc (http://gamebanana.com/textures/2870).
 
 Sounds:
 world/data_transfer.wav - made from "ZX Spectrum reading a tape" sound by are16ocean (http://freesound.org/people/are16ocean/sounds/128783/).
