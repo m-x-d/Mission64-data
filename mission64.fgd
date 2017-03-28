@@ -528,7 +528,7 @@
 	yaw_speed(integer) : "Yaw speed"
 ]
 
-@SolidClass base(Appearflags, Targetname) color(0 128 204) = func_wall : "Solid Wall"
+@SolidClass base(Appearflags, Targetname, Movewith, Count1, ArghBmodel) color(0 128 204) = func_wall : "Solid Wall"
 [
 	spawnflags(Flags) =
 	[
@@ -566,7 +566,7 @@
 ]
 
 @PointClass base(Appearflags, Targetname) color(0 128 0) size(-4 -4 -4, 4 4 4) = info_null : "Spotlight target" []
-@PointClass base(info_null) = info_notnull : "Lightning target" []
+@PointClass base(info_null, Angles, Movewith) = info_notnull : "Lightning target" []
 
 @BaseClass base(Appearflags, Target) color(76 76 255) size(-16 -16 -16, 16 16 16) offset(0 0 16) = Items 
 [
@@ -1116,7 +1116,7 @@
 // if no color spawnflags are set, the laser color defaults to dim gray (and hard to see
 // setting the damage to 0 makes it use the default damage of 1
 // setting the damage to a negative number will actually give health
-@PointClass base(Appearflags, Targetname, Target) color(0 128 204) size(-8 -8 -8, 8 8 8) = target_laser : "Laser"
+@PointClass base(Appearflags, Targetname, Angles1, Count1, Movewith) color(0 128 204) size(-8 -8 -8, 8 8 8) = target_laser : "Laser"
 [
 	spawnflags(Flags) =
 	[
@@ -1127,8 +1127,19 @@
 		16 : "Yellow" : 0
 		32 : "Orange" : 0
 		64 : "Fat" : 0
+		128 : "Seek Player" : 0
 	]
 	dmg(integer) : "Damage"
+	style(choices) : "Style>behavior" : 0 =
+	[
+		0 : "Normal damage"
+		1 : "No damage, monsters avoid"
+		2 : "No damage, monsters ignore"
+		3 : "No damage, monsters ignore, no sparks"
+	]
+	mass(integer) : "Mass>beam width" : 0
+	wait(string) : "Wait>sec between pulses" : "0"
+	delay(string) : "Delay>pulse duration (sec)" : "0"
 ]
  
 @PointClass base(Appearflags, Targetname, Target) color(0 128 204) size(-8 -8 -8, 8 8 8) = target_lightramp : "Light ramp"
