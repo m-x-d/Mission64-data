@@ -1154,6 +1154,18 @@
 	message(string) : "start/end light level"
 ]
 
+//
+// TARGET_ROTATION
+@PointClass base(Appearflags, Targetname, Count) color(192 192 192) size(-8 -8 -8, 8 8 8) = target_rotation : "Target cycler"
+[
+	spawnflags(Flags) =
+	[
+		1 : "No Loop" : 0
+		2 : "Random" : 0
+	]
+	target(string) : "Ent(s) to trigger"
+]
+
 @PointClass base(Appearflags, Targetname) color(255 0 255) size(-8 -8 -8, 8 8 8) iconsprite("sprites/secret.spr") = target_secret : "Counts a secret found"
 [
 	message(string) : "Message to print" : "You have found a secret."
