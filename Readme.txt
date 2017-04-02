@@ -13,7 +13,7 @@ Credits:
 
 Skyboxes:
 ascend - "sky_ascend" by Z(Rus) and JadrienC (http://gamebanana.com/textures/3775).
-galaxy - "Milky way galaxy" by Komaokc (http://gamebanana.com/textures/2870).
+nebula3 - taken from "Maximus Overdrive" Quake 3 map by EmeraldTiger (https://lvlworld.com/review/Maximus%20Overdrive).
 
 Sounds:
 world/data_transfer.wav - made from "ZX Spectrum reading a tape" sound by are16ocean (http://freesound.org/people/are16ocean/sounds/128783/).
