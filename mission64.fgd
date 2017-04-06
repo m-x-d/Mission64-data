@@ -1102,7 +1102,14 @@
 	dmg(integer) : "Radius damage" : 0
 ]
 
-@PointClass base(Appearflags, Targetname) color(255 0 255) size(-8 -8 -8, 8 8 8) iconsprite("sprites/goal.spr") = target_goal : "Counts a goal completed" []
+@PointClass base(Appearflags, Targetname) color(255 0 255) size(-8 -8 -8, 8 8 8) iconsprite("sprites/goal.spr") = target_goal : "Counts a goal completed"
+[
+	spawnflags(Flags) =
+	[
+		1 : "Disabled" : 0
+		2 : "Don't display message" : 0
+	]
+]
 
 @PointClass base(Appearflags, Targetname) color(255 0 255) size(-8 -8 -8, 8 8 8) iconsprite("sprites/help.spr") = target_help : "Computer help message"
 [
