@@ -1300,6 +1300,10 @@
 
 @PointClass base(Appearflags, Targetname, Target, Count) iconsprite("sprites/trigger_relay2.spr") color(128 128 128) = trigger_relay : "Relay trigger"
 [
+	spawnflags(Flags) =
+	[
+		1 : "Trigger at map start" : 0
+	]
 	dmgteam(string) : "DmgTeam"
 	killtarget(string) : "Kill Target"
 	delay(integer) : "Time before triggering"
