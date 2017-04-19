@@ -358,6 +358,16 @@
 	_minlight(integer) : "Minimum light (optional)"
 ]
 
+//
+// FUNC_DOOR_ROT_DH
+// Identical to func_door_rotating, but "pathtarget" specifies location of origin at runtime
+@Baseclass base(func_door_rotating) = FDoorRotDH
+[
+	pathtarget(string) : "Origin at runtime"
+	combattarget(string) : "Initial origin"
+]
+@SolidClass base(FDoorRotDH, ArghBmodel) color(0 128 204) = func_door_rot_dh : "Rotating Door (manual origin)" []
+
 @SolidClass base(Appearflags, Targetname) color(0 128 204) = func_door_secret : "Secret Door"
 [
 	spawnflags(Flags) =
