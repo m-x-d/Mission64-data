@@ -519,7 +519,7 @@
 		32 : "Animate textures" : 0
 		64 : "Animate all textures fast" : 0
 		128 : "Smooth move" : 0
-		4096 : "Interpolated movement" : 0
+		8192 : "Interpolated movement" : 0
 	]
 	target(string) : "First stop target"
 	team(string) : "Team"
@@ -1560,7 +1560,7 @@
 		32 : "Rotate" : 0
 		64 : "Rotate Constant" : 0
 		128 : "Smooth Move" : 0
-		4096 : "Interpolated movement" : 0
+		8192 : "Interpolated movement" : 0
 	]
 	target(string) : "Target>first path_corner"
 	team(string) : "Team>func_train or func_rotating"
