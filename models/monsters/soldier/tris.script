@@ -11,9 +11,19 @@ md2mesh.0
 	glow models/monsters/soldier/skin_lt_glow.tga identity
 }
 
+md2mesh.0
+{
+	glow models/monsters/soldier/skin_ltp_glow.tga identity
+}
+
 md2mesh.2
 {
 	glow models/monsters/soldier/skin_glow.tga identity
+}
+
+md2mesh.3
+{
+	glow models/monsters/soldier/pain_glow.tga identity
 }
 
 md2mesh.4

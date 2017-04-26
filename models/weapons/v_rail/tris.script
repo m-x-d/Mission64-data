@@ -1,7 +1,7 @@
 // Looks like .script files aren't cumulative...
 md2mesh.0
 {
-	glow models/weapons/v_rail/od_railglow2.tga wave sin 0 .2 0 1
+	glow models/weapons/v_rail/skin_glow.tga wave sin .4 .2 0 1
 }
 
 // Skin for Invisibility mode.

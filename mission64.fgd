@@ -187,10 +187,10 @@
 @baseclass = Target [ target(target_destination) : "Target" ]
 
 //mxd
-@PointClass base(Appearflags) flags(Angle) size(-16 -16 -16, 16 16 16) studio() = misc_model : "Debug model" 
+/*@PointClass base(Appearflags) flags(Angle) size(-16 -16 -16, 16 16 16) studio() = misc_model : "Debug model" 
 [
 	model(studio) : "Model"
-]
+]*/
 
 //
 // player start, deathmatch, coop, deathmatch intermission
@@ -1548,7 +1548,7 @@
 
 //
 // MODEL_TRAIN
-@Baseclass base(Appearflags, Targetname, Angles, Speed100) = MTrain
+@Baseclass base(Appearflags, Targetname, Angles, Speed100) studio() = MTrain
 [
 	spawnflags(Flags) =
 	[
@@ -1565,6 +1565,7 @@
 	target(string) : "Target>first path_corner"
 	team(string) : "Team>func_train or func_rotating"
 	usermodel(studio) : "Model"
+	model(studio) : "Model (JACK only...)"
 	skinnum(integer) : "Skin number" : 0
 	startframe(integer) : "First frame #"
 	solidstate(choices) : "Clipping" : 1 =
@@ -1592,7 +1593,7 @@
 
 //
 // MODEL_TRAIN_ORIGIN
-@Baseclass base(Appearflags, Targetname, Angles, Speed100) = MTrainOrigin
+@Baseclass base(Appearflags, Targetname, Angles, Speed100) studio() = MTrainOrigin
 [
 	spawnflags(Flags) =
 	[
@@ -1609,6 +1610,7 @@
 	target(string) : "Target>first path_corner"
 	team(string) : "Team>func_train or func_rotating"
 	usermodel(studio) : "Model"
+	model(studio) : "Model (JACK only...)"
 	skinnum(integer) : "Skin number" : 0
 	startframe(integer) : "First frame #"
 	solidstate(choices) : "Clipping" : 1 =
@@ -1636,7 +1638,7 @@
 //
 // MODEL_SPAWN - MapPack model spawner
 // DWH: corrected "framenumbers" - was "userframes"
-@PointClass base(Appearflags, Targetname, Angles, Movewith, TremorEffects) iconsprite("sprites/flare.spr") color(255 0 0) size(-8 -8 -8, 8 8 8) = model_spawn : "User models"
+@PointClass base(Appearflags, Targetname, Angles, Movewith, TremorEffects) iconsprite("sprites/flare.spr") color(255 0 0) size(-8 -8 -8, 8 8 8) studio() = model_spawn : "User models"
 [
 	spawnflags(Flags) =
 	[
@@ -1646,6 +1648,7 @@
 		32 : "Anim Once" : 0
 	]
 	usermodel(studio) : "Model"
+	model(studio) : "Model (JACK only...)"
 	skinnum(integer) : "Skin number" : 0
 	startframe(integer) : "first frame #"
 	framenumbers(integer) : "Framenumbers># add'l frames" : 1
@@ -1689,6 +1692,19 @@
 	mass(integer)  : "Debris amount" : 500
 	speed(integer) : "Speed" : 400
 	style(integer) : "Model id" : 0
+]
+
+//
+// TARGET_FAILURE
+@PointClass base(Appearflags, Targetname, Count) color(255 0 0) size(-8 -8 -8, 8 8 8) = target_failure : "Mission failure"
+[
+	spawnflags(Flags) =
+	[
+		1 : "1>Use external file" : 0
+		2 : "2>No background" : 0
+	]
+	message(string) : "Message or path/file.txt"
+	noise(string) : "Sound"
 ]
 
 //

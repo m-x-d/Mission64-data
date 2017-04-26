@@ -1,0 +1,4 @@
+md2mesh.0
+{
+	glow models/ships/strogg1/skin_glow.tga identity
+}

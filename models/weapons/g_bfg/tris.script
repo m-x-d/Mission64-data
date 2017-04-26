@@ -1,0 +1,4 @@
+md2mesh.0
+{
+	glow models/weapons/g_bfg/skin_glow.tga wave sin 0.4 0.3 0 0.6
+}

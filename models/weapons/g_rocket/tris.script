@@ -1,0 +1,4 @@
+md2mesh.0
+{
+	glow models/weapons/g_rocket/skin_glow.tga identity
+}

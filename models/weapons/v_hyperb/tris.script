@@ -1,7 +1,7 @@
 // Looks like .script files aren't cumulative...
 md2mesh.0
 {
-	glow models/weapons/v_hyperb/od_hyperblasterglow.tga identity
+	glow models/weapons/v_hyperb/skin_glow.tga identity
 }
 
 // Skin for Invisibility mode.

@@ -1,0 +1,4 @@
+md2mesh.0
+{
+	glow models/weapons/g_shotg/skin_glow.tga wave sin .9 .1 0 10
+}

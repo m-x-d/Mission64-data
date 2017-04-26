@@ -1,0 +1,9 @@
+md2mesh.0
+{
+	glow models/monsters/hover/skin_glow.tga identity
+}
+
+md2mesh.1
+{
+	glow models/monsters/hover/pain_glow.tga identity
+}
