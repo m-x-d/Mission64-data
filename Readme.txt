@@ -17,4 +17,3 @@ nebula3 - taken from "Maximus Overdrive" Quake 3 map by EmeraldTiger (https://lv
 
 Sounds:
 world/data_transfer.wav - made from "ZX Spectrum reading a tape" sound by are16ocean (http://freesound.org/people/are16ocean/sounds/128783/).
-world/steam_hit1.wav - made from "Bicycle pump" sound by Michaelvelo (https://freesound.org/people/Michaelvelo/sounds/366814/).
