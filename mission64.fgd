@@ -431,7 +431,7 @@
 [
 	spawnflags(Flags) =
 	[
-		1 : "Plat Low Trigger" : 0
+		1 : "Low Trigger Height (8 mu)" : 0
 	]	
 	speed(integer) : "Speed" : 100
 	accel(integer) : "Acceleration" : 500
@@ -439,6 +439,7 @@
 	lip(integer) : "Lip remaining after move" : 8
 	height(integer) : "Movement distance"
 	_minlight(integer) : "Minimum light (optional)"
+	wait(integer) : "Trigger delay"
 ]
 
 /*@SolidClass base(Appearflags, Targetname) color(0 128 204) = func_rotating : "Rotating brush"
@@ -933,6 +934,15 @@
 	]
 	dmg(integer) : "Damage" : 15
 	speed(integer) : "Speed" : 1000
+]
+
+//
+// TARGET_CD
+@PointClass base(Appearflags, Targetname, Count) color(128 128 128) size(-8 -8 -8, 8 8 8)=target_cd : "CD track player"
+[
+	sounds(integer) : "CD track number" : 2
+	musictrack(string) : "ogg/mp3 track name"
+	dmg(integer): "Times to loop" : 1
 ]
 
 //
