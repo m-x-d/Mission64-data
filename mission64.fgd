@@ -439,7 +439,8 @@
 	lip(integer) : "Lip remaining after move" : 8
 	height(integer) : "Movement distance"
 	_minlight(integer) : "Minimum light (optional)"
-	wait(integer) : "Trigger delay"
+	wait(integer) : "Trigger delay (optional)"
+	pausetime(integer) : "Return delay (optional)"
 ]
 
 /*@SolidClass base(Appearflags, Targetname) color(0 128 204) = func_rotating : "Rotating brush"
