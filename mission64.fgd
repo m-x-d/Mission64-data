@@ -861,7 +861,17 @@
 	combattarget(string) : "Point combat target"
 	deathtarget(string) : "Entity to trigger at death"
 	killtarget(string) : "Entity to remove at death"
-	item(string) : "Spawn Item"
+	item(choices) : "Spawn Item" =
+	[
+		"" : "Nothing"
+		"ammo_bullets" : "Bullets"
+		"ammo_cells" : "Cells"
+		"ammo_grenades" : "Grenade"
+		"ammo_rockets" : "Rockets"
+		"ammo_shells" : "Shells"
+		"ammo_slugs" : "Slugs"
+		"item_armor_shard" : "Armor shard"
+	]
 	salpha(string) : "Alpha"
 ]
 
@@ -1109,7 +1119,14 @@
 
 @PointClass base(Appearflags, Targetname) color(255 0 0) size(-8 -8 -8, 8 8 8) iconsprite("sprites/target_earthquake.spr") = target_earthquake : "Level wide earthquake"
 [
-	speed(integer) : "Severity of quake" : 200
+	spawnflags(Flags) =
+	[
+		1 : "Infinite duration" : 0
+		2 : "Shake viewport" : 0
+	]
+	accel(float) : "Horizontal intensity" : 150
+	speed(float) : "Vertical intensity" : 200
+	decel(float) : "Quake sound volume" : 1
 	count(integer) : "Duration" : 5
 ]
 
@@ -1694,6 +1711,43 @@
 	fadein(string) : "Fade-in time" : "0"
 	holdtime(string) : "Hold time" : "0"
 	fadeout(string) : "Dade-out time" : "0"
+]
+
+//
+// TARGET_PRECIPITATION
+@PointClass base(Appearflags, Targetname, Angles1, TremorEffects) flags(Angle) color(0 0 192) size(-8 -8 -8, 8 8 8) = target_precipitation : "Rain/snow"
+[
+	spawnflags(Flags) =
+	[
+		1 : "Start On" : 0
+		2 : "Splash" : 0
+		4 : "Bounce" : 0
+		8 : "Fire Once" : 0
+		16 : "Start Fade" : 0
+	]
+	style(choices) : "Effect" : 0 =
+	[
+		0 : "Single raindrop"
+		1 : "10 raindrops"
+		2 : "10 snowflakes"
+		3 : "Leaves"
+		4 : "User-defined"
+	]
+	bleft(string) : "Min extent" : "0 0 0"
+	tright(string) : "Max extent" : "0 0 0"
+	count(integer) : "Count" : 1
+	random(integer) : "Count variance"
+	speed(string) : "Speed" : "300"
+	gravity(string) : "Gravity ratio"
+	fadeout(string) : "Fadeout time"
+	attenuation(string) : "Rebound"
+	mass(integer) : "Weight of model" : 0
+	mass2(integer) : "Num. splash particles" : 8
+	sounds(integer) : "Color index" : 183
+	pitch_speed(string) : "Pitch speed (deg/sec)"
+	yaw_speed(string) : "Yaw speed (deg/sec)"
+	roll_speed(string) : "Roll speed (deg/sec)"
+	usermodel(string) : "Model name"
 ]
 
 //
