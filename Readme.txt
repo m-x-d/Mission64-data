@@ -20,4 +20,11 @@ Sounds:
 	world/data_transfer.wav - made from "ZX Spectrum reading a tape" sound by are16ocean (http://freesound.org/people/are16ocean/sounds/128783/).
 
 Music:
+	u1m1.ogg - "Descent Into Cerberon (Cover)" by James Gorringe (https://corrosionmedia.bandcamp.com/track/descent-into-cerberon-cover).
+	u1m1_amb.ogg - first 23 seconds of "Forboding Echoes" by Aubrey Hodges (https://aubreyhodges.bandcamp.com/album/quake-2-nintendo-64-official-soundtrack).
+	u1m2.ogg - "Music_BZ_1" from Battlezone (PSP) soundtrack by Sonic Mayhem.
+	u1m3.ogg - "Music_BZ_3" from Battlezone (PSP) soundtrack by Sonic Mayhem.
+	u1m4.ogg - "Music_BZ_6" from Battlezone (PSP) soundtrack by Sonic Mayhem.
+	u2m1.ogg - "Music_BZ_2" from Battlezone (PSP) soundtrack by Sonic Mayhem.
+	u2m2.ogg - "Music_BZ_4" from Battlezone (PSP) soundtrack by Sonic Mayhem.
 	u3m1.ogg - "Music_BZ_7" from Battlezone (PSP) soundtrack by Sonic Mayhem.
