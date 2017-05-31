@@ -1335,6 +1335,7 @@
 	item(choices) : "Item classname" : "key_blue_key" = 
 	[
 		"key_blue_key" : "Blue key"
+		"key_red_key" : "Red key"
 		"key_explopack" : "Explosives pack"
 	]
 ]
