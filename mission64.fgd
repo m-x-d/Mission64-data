@@ -1225,7 +1225,7 @@
 
 //
 // TARGET_SKY
-@PointClass base(Appearflags1, Targetname, Count) flags(Angle) color(255 255 0) size(-8 -8 -8, 8 8 8) = target_sky : "Change env sky"
+@PointClass base(Appearflags, Targetname, Count) flags(Angle) color(255 255 0) size(-8 -8 -8, 8 8 8) = target_sky : "Change env sky"
 [
 	sky(string) : "Environment map name"
 	//skyaxis(float) : "Speed of rotation (degrees/second)"
