@@ -193,6 +193,74 @@
 ]*/
 
 //
+// CRANE_BEAM
+@Baseclass base(Appearflags, Targetname) = CraneBeam
+[
+	target(string) : "Crane_hoist"
+	team(string) : "Crane_control"
+	speed(integer) : "Speed" : 100
+	dmg(integer) : "Damage when blocked" : 0
+	noise(sound) : "Movement sound"
+	pathtarget(string) : "Path_corner waypoint"
+]
+@SolidClass base(CraneBeam) color(0 128 204) = crane_beam : "Crane body" []
+
+//
+// CRANE_CONTROL
+@Baseclass base(Appearflags, Targetname) = CranePanel
+[
+	target(string) : "Crane_beam targetname"
+	team(string) : "Team>w/crane_beam"
+	style(choices) : "Facing" : 0 =
+	[
+		0 : "East"
+		1 : "North"
+		2 : "West"
+		3 : "South"
+	]
+	spawnflags(Flags) =
+	[
+		1 : "Start on" : 0
+	]
+]
+@SolidClass base(CranePanel) color(0 128 204) = crane_control : "Crane control panel" []
+
+//
+// CRANE_HOIST
+@Baseclass base(Appearflags, Targetname) = CraneHoist
+[
+	target(string) : "Crane_hook"
+	speed(integer) : "Speed" : 100
+	dmg(integer) : "Damage when blocked" : 0
+	noise(sound) : "Movement sound"
+	pathtarget(string) : "Pathtarget>path_corner waypoints"
+]
+@SolidClass base(CraneHoist) color(0 128 204) = crane_hoist : "Crane hoist" []
+
+//
+// CRANE_HOOK
+@Baseclass base(Appearflags, Targetname) = CraneHook
+[
+	speed(integer) : "Speed" : 100
+	dmg(integer) : "Damage when blocked" : 0
+	noise(sound) : "Movement sound"
+	pathtarget(string) : "Path_corner waypoints"
+	move_origin(string) : "Offset to cable XYZ" : "0 0 0"
+	spawnflags(Flags) =
+	[
+		1 : "Spotlight" : 0
+	]
+]
+@SolidClass base(CraneHook) color(0 128 204) = crane_hook : "Crane hook" []
+
+//
+// CRANE_RESET
+@PointClass base(Appearflags, Targetname, Count) color(0 128 204) = crane_reset : "Crane_reset"
+[
+	target(string) : "Name of crane_beam"
+]
+
+//
 // player start, deathmatch, coop, deathmatch intermission
 //
 
