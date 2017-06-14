@@ -211,13 +211,14 @@
 [
 	target(string) : "Crane_beam targetname"
 	team(string) : "Team>w/crane_beam"
-	style(choices) : "Facing" : 0 =
+	style(choices) : "Player facing" : 0 =
 	[
 		0 : "East"
 		1 : "North"
 		2 : "West"
 		3 : "South"
 	]
+	message(string) : "'No power' message"
 	spawnflags(Flags) =
 	[
 		1 : "Start on" : 0
@@ -510,6 +511,45 @@
 	wait(integer) : "Trigger delay (optional)"
 	pausetime(integer) : "Return delay (optional)"
 ]
+
+//
+// FUNC_PUSHABLE
+@Baseclass base(Appearflags, Targetname) = FPushable
+[
+	spawnflags(Flags) =
+	[
+		2 : "Trigger spawn" : 0
+		4 : "Not pushed by weapon fire" : 0
+	]
+	sounds(choices) : "Sounds when moving" : 0 =
+	[
+		0 : "Silent"
+		1 : "Tank thud"
+		2 : "Rail gun hum"
+		3 : "Rocket fly"
+	]
+	mass(integer) : "Weight/debris amt" : 400
+	health(integer) : "Health" : 0
+	gib_type(choices)	: "Debris type" : 0 =
+	[
+		0 : "Standard"
+		1 : "Metal"
+		2 : "Glass"
+		3 : "Barrel"
+		4 : "Crate"
+		5 : "Rock"
+		6 : "Crystal"
+		7 : "Mechanical"
+		8 : "Wood"
+		9 : "Tech"
+	]
+	dmg(integer) : "Damage at origin" : 0
+	deathtarget(string) : "Death target"
+	killtarget(string) : "Kill target"
+	message(string) : "Message when destroyed"
+	skinnum(integer) : "Skin number"
+]
+@SolidClass base(FPushable) color(0 128 204) = func_pushable : "Pushable Object" []
 
 /*@SolidClass base(Appearflags, Targetname) color(0 128 204) = func_rotating : "Rotating brush"
 [
