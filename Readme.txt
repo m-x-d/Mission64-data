@@ -18,7 +18,10 @@ Skyboxes:
 
 Sounds:
 	world/data_transfer.wav - made from "ZX Spectrum reading a tape" sound by are16ocean (http://freesound.org/people/are16ocean/sounds/128783/).
-	world/metal_rattle1.wav - made from "Deep Rattle 2" sound by ingudios (https://freesound.org/people/ingudios/sounds/119464/). 
+	world/metal_rattle1.wav - made from "Deep Rattle 2" sound by ingudios (https://freesound.org/people/ingudios/sounds/119464/).
+	crane/crane_beam1.wav   - made from "hydraulic machine.wav" sound by parabolix (https://freesound.org/people/parabolix/sounds/352388/).
+	crane/crane_hoist1.wav  - made from "hydraulic machine.wav" sound by parabolix (https://freesound.org/people/parabolix/sounds/352388/).
+	crane/crane_hook1.wav   - made from "Garage Door opening and closing.wav" sound by MoniqueKruger (https://freesound.org/people/MoniqueKruger/sounds/325772/).
 
 Music:
 	u1m1.ogg - "Descent Into Cerberon (Cover)" by James Gorringe (https://corrosionmedia.bandcamp.com/track/descent-into-cerberon-cover).
