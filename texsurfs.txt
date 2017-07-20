@@ -8,5 +8,9 @@
 1 floor1
 1 floor3
 2 /rock
+3 /metal14
 4 /grate
+4 /fence
+5 /glass
 6 /gras
+9 /forcefield
