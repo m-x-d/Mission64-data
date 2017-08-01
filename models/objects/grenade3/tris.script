@@ -1,0 +1,4 @@
+md2mesh.0
+{
+	glow models/objects/grenade3/skin_glow.tga wave triangle 0.3 0.3 0 6
+}
