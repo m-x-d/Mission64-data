@@ -584,10 +584,12 @@
 		32 : "Block Stops" : 0
 		64 : "Animated" : 0
 		128 : "Animated Fast" : 0
+		8192 : "Accelerate when triggered" : 0
 	]	
+	accel(integer) : "Acceleration rate" : 1
 	team(string) : "Team"
 	dmg(integer) : "Damage when blocked" : 2
-	noise(string) : "Sound file"
+	noise(sound) : "Sound name"
 	turn_rider(choices): "Rotate player" : 0 =
 	[
 		0 : "No"
@@ -1091,7 +1093,7 @@
 	killtarget(string) : "New killtarget"
 	mass(string) : "New mass"
 	message(string) : "New message"
-	noise(string) : "New noise"
+	noise(sound) : "New noise"
 	pathtarget(string) : "New pathtarget"
 	random(string) : "New random"
 	speed(string) : "New speed"
@@ -1519,7 +1521,7 @@
 		32 : "Custom Sound" : 0
 		64 : "Landmark" : 0
 	]
-	noise(string) : "Noise>sound (path/file.wav)"
+	noise(sound) : "Sound"
 	target(string) : "Target>destination"
 ]
 
@@ -1631,8 +1633,9 @@
 [
 	spawnflags(Flags) =
 	[
-		16 : "16>Hold" : 0
-		32 : "32>Brutal" : 0
+		1 : "Trigger at map start" : 0
+		16 : "Hold position" : 0
+		32 : "Brutal" : 0
 	]
 	target(string) : "Target>monster angered"
 	killtarget(string) : "Killtarget>entity to attack"
