@@ -1,0 +1,8 @@
+md2mesh.0
+{
+	twosided
+  noshadow
+  nodiffuse
+  blendfunc add
+  trans 0.4
+}
