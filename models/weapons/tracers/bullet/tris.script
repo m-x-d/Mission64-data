@@ -1,8 +1,8 @@
 md2mesh.0
 {
-	twosided
+  twosided
   noshadow
   nodiffuse
-  trans 0.2
-  glow models/weapons/tracers/bullet/skin_glow.tga identity
+  fullbright
+  trans 0.8
 }

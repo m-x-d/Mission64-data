@@ -2,13 +2,17 @@
 
 About:
 	Mission 64 is a Quake 2 mission pack heavily inspired by Quake 2 for Nintendo 64.
-	Requires KMQuake 2 engine (http://www.markshan.com/knightmare/) to run properly.
+	Requires KMQuake 2 engine (http://www.markshan.com/knightmare/) to run.
 
 Usage:
-	Extract "mission64" folder from the archive into your Quake 2 folder, then use "mission64/Launch.bat" to play.
+	Extract "mission64" folder from the archive into your Quake 2 folder, then run "mission64/Launch.bat" to play.
 
 Known issues:
 	For some users the mod crashes during startup, unless KMQuake 2 is launched as Administrator.
+
+Mod-specific cvars:
+	spawn_casings [default: 1] - spawn bullet casings.
+	spawn_tracers [default: 1] - spawn bullet tracers.
 
 ================= Credits =================
 
@@ -33,7 +37,9 @@ Sounds:
 	weapons/shells/shell1.wav       - made from "Shotgun Shell.wav" sound by ThompsonMan (https://freesound.org/people/ThompsonMan/sounds/107342/).
 	weapons/shells/shell2.wav       - same as above.
 	weapons/shells/shell_stop.wav   - same as above.
-
+	hover/hover_spin.wav            - made from "Mainboard Error Code" sound by qubodup (https://freesound.org/people/qubodup/sounds/167848/),
+						              "Broken printer, stalled machine.wav" sound by SpliceSound (https://freesound.org/people/SpliceSound/sounds/188187/)
+						              and "hover/hovidle1.wav" from Quake 2.
 Music:
 	u1m1.ogg - "Descent Into Cerberon (Cover)" by James Gorringe (https://corrosionmedia.bandcamp.com/track/descent-into-cerberon-cover).
 	u1m1_amb.ogg - first 23 seconds of "Forboding Echoes" by Aubrey Hodges (https://aubreyhodges.bandcamp.com/album/quake-2-nintendo-64-official-soundtrack).

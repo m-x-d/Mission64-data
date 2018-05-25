@@ -1,8 +1,8 @@
 md2mesh.0
 {
-	twosided
+  twosided
   noshadow
   nodiffuse
-  blendfunc add
-  trans 0.4
+  fullbright
+  trans 0.9
 }

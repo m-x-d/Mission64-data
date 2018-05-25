@@ -58,28 +58,57 @@
 //
 @baseclass = ArghBmodel 
 [
-	_minlight(string) : "_minlight>mottled glow 0.0-2.0"
-	_ambient(string) : "_ambient>minlight-RGB or absolute"
-	light(string) : "Light>tex light value"
-	_lightmin(string) : "_lightmin>min tex light value"
-	style(choices) : "Style>type tex light" : 0 =
+	style(choices) : "Light style" : 0 =
 	[
-		0 : "0>Normal"
-		1 : "1>Flicker #1"
-		6 : "6>Flicker #2"
-		2 : "2>Slow Strong Pulse"
-		3 : "3>Candle #1"
-		7 : "7>Candle #2"
-		8 : "8>Candle #3"
-		4 : "4>Fast Strobe"
-		5 : "5>Gentle Pulse #1"
-		9 : "9>Slow Strobe"
-		10 : "10>Fluorescent Flicker"
-		11 : "11>Slow pulse, no black"
+		0 : "Normal"
+		1 : "Flicker #1"
+		6 : "Flicker #2"
+		2 : "Slow Strong Pulse"
+		3 : "Candle #1"
+		7 : "Candle #2"
+		8 : "Candle #3"
+		4 : "Fast Strobe"
+		5 : "Gentle Pulse #1"
+		9 : "Slow Strobe"
+		10 : "Fluorescent Flicker"
+		11 : "Slow pulse, no black"
 	]
-	_color(color1) : "_color>tex light RGB color"
-	_focus(string) : "_focus>fade tex light edges"
-	_minlighta(string) : "_minlighta>abs scale minlite"
+
+  _minlight(integer) : "Ambient light"
+  
+  //ericw-tools
+  _minlight_color(color1) : "Ambient light color"
+  _minlight_exclude(string) : "Ambient light exclude by texture" : "" : "Faces with the given texture are excluded from receiving minlight on this brush model."
+  
+  _lightignore(choices) : "Minimum light only" : 0 = [ 
+    0 : "No"
+    1 : "Yes"
+  ]
+  
+  _shadow(choices) : "Cast shadows (all)" : 0 = [
+    0 : "No"
+		1 : "Yes"
+  ]
+  _shadowself(choices) : "Cast shadows (self only)" : 0 = [
+    0 : "No"
+		1 : "Yes"
+  ]
+  _shadowworldonly(choices) : "Cast shadows (world only)" : 0 = [
+    0 : "No"
+		1 : "Yes"
+  ]
+  
+  _phong(choices) : "Phong shading" : 0 = [
+    0 : "No"
+		1 : "Yes"
+  ]
+  _phong_angle(integer) : "Phong shading angle" : 89 
+  _phong_angle_concave(integer) : "Concave phong shading angle" 
+  
+  _dirt(choices) : "Dirtmapping" : 0 = [
+    0 : "Enabled (default)"
+		-1 : "Disabled"  
+  ]
 ]
 //
 @baseclass = TremorEffects
@@ -156,6 +185,41 @@
 	musictrack(string) : ".OGG music track"
 	gravity(integer) : "Gravity" : 800
 	
+  //mxd. ericw-tools
+  _anglescale(float) : "Phong angle scale" : 0.5
+  _dirt(choices) : "Dirtmapping" : 0 =
+	[
+		0 : "Disabled"
+		1 : "Enabled"
+	]
+  _minlight_dirt(choices) : "Dirtmapping on minlight surfaces" : 0 =
+	[
+		0 : "Disabled"
+		1 : "Enabled"
+	]
+  _minlight_dirt(choices) : "Dirtmapping mode" : 0 =
+	[
+		0 : "Default"
+		1 : "Randomized"
+	]
+  _dirtdepth(integer) : "Dirtmapping depth" : 128 : "Maximum depth of occlusion checking for dirtmapping."
+  _dirtscale(float) :   "Dirtmapping scale" : 1.0 : "Scale factor used in dirt calculations, default 1. Lower values (e.g. 0.5) make the dirt fainter, 2.0 would create much darker shadows."
+  _dirtgain(float) :    "Dirtmapping exponent" : 1.0 : "Exponent used in dirt calculation, default 1. Lower values (e.g. 0.5) make the shadows darker and stretch further away from corners."
+  _dirtangle(integer) : "Dirtmapping angle" : 88 : "Cone angle in degrees for occlusion testing, default 88. Allowed range 1-90. Lower values can avoid unwanted dirt on arches, pipe interiors, etc."
+  
+  _bounce(choices) : "Bounce lighting" : 0 =
+	[
+		0 : "Disabled"
+		1 : "Enabled"
+	]
+  _bouncescale(float) : "Bounce lighting scale"
+  _bouncecolorscale(float) : "Bounce color scale" : 0.0 : "Weight for bounce lighting to use texture colors from the map: 0=ignore map textures (default), 1=multiply bounce light color by texture color."
+  _spotlightautofalloff(choices) : "Spotlight auto falloff" : 0 =
+	[
+		0 : "Disabled"
+		1 : "Enabled"
+	]
+  
 	//mxd. Arghrad settings
 	_ambient(color255) : "Global ambient color"
 	_sun_ambient(color255) : "Sun ambient color"
@@ -660,7 +724,6 @@
 		8 : "Animated" : 0
 		16 : "Animated Fast" : 0
 	]
-	_minlight(integer) : "Minimum light (optional)"
 ]
 
 // must never be transparent? 
@@ -748,9 +811,9 @@
 		1 : "Start Off" : 0
 	]
 	light(integer) : "Brightness" : 300 : "A negative brightness value causes this light to cast darkness."
-	_cap(integer) : "Brightness cap" //mxd
+  _distance(integer) : "Falloff"   //mxd 
+	//_cap(integer) : "Brightness cap" //mxd
 	_color(color1) : "Color" : "1 1 1"
-	_distance(integer) : "Falloff"   //mxd
 	style(Choices) : "Style" : 0 =
 	[
 		0 : "Normal"
@@ -766,20 +829,32 @@
 		10 : "Fluorescent Flicker"
 		11 : "Slow pulse, no black"
 	]
-	_falloff(Choices) : "Falloff style" : 0 =
+	_falloff(Choices) : "Falloff style" : 0 =  // delay in ericw-tools
 	[
 		0 : "Linear"
 		1 : "Inverse"
 	  2 : "Inverse-square"
+    3 : "No attenuation" // ericw-tools
+    4 : "Local minlight" // ericw-tools
+    5 : "Inverse-square, ho highlight" // ericw-tools
 	] //mxd
-	_cone(integer) : "Size of light (spotlight)" : 10
+	_cone(integer) : "Size of spotlight" : 10
+  _softangle(integer) : "Size of inner spotlight cone" // ericw-tools
 	
 	//mxd. Arghrad sun settings
-	_sun(integer) : "Use as sun #"
-	_diffuse(integer) : "Sunlight diffuse" : 0 : "This simulates the diffusion of light by atmospheric haze, creating a soft glow around the edges of sunlight shadows."
-	_diffade(float) : "Sunlight diffuse fade scaler"
+	_sun(Choices) : "Use as sun" : 0 =
+  [
+    0 : "No"
+		1 : "Yes"
+  ]
+	//_diffuse(integer) : "Sunlight diffuse" : 0 : "This simulates the diffusion of light by atmospheric haze, creating a soft glow around the edges of sunlight shadows."
+	//_diffade(float) : "Sunlight diffuse fade scaler"
 	_angfade(float) : "Light angle fade" : 1 : "Scales how quickly the light fades as the angle-of-incidence decreases (from perpendicular to parallel). Values less than 1 fade slower, so the angle has less affect. Values greater than 1 fade faster, so the angle has more pronounced affect."
-	_fade(integer) : "Light fade scale" : 1 : "Scales how quickly the light fades over distance. Values less than 1 fade slower, increasing the distance. Values greater than 1 fade faster, decreasing the distance. For example, a value of .5 fades half as fast, shining twice as far.\n\nNote: This setting only works on lights with linear falloff."
+	//_fade(integer) : "Light fade scale" : 1 : "Scales how quickly the light fades over distance. Values less than 1 fade slower, increasing the distance. Values greater than 1 fade faster, decreasing the distance. For example, a value of .5 fades half as fast, shining twice as far.\n\nNote: This setting only works on lights with linear falloff."
+  
+  // ericw-tools
+  _project_texture(string) : "Project texture"
+  _project_fov(integer) : "Project texture FOV" : 90
 ]
 
 @PointClass base(light) color(0 255 0) size(-4 -4 -8, 4 4 8) = light_mine1 : "Dusty fluorescent light fixture" 
