@@ -518,6 +518,69 @@
 	_minlight(integer) : "Minimum light (optional)"
 ]
 
+//
+// FUNC_BREAKAWAY
+@Baseclass base(Appearflags1, Targetname, Target, Killtarget, Movewith) = FBreakaway
+[
+	spawnflags(Flags) =
+	[
+		1 : "Trigger Spawn" : 0
+		2 : "Animated" : 0
+		4 : "Animated Fast" : 0
+		8 : "Inactive" : 0
+		16 : "Fade" : 0
+		32 : "AlwaysShoot" : 0
+		64 : "TargAngle" : 0
+	]
+	gib_type(choices): "Material" : 0 =
+	[
+		0 : "Default"
+		1 : "Metal"
+		2 : "Glass"
+		3 : "Barrel"
+		4 : "Crate"
+		5 : "Rock"
+		6 : "Crystal"
+		7 : "Mechanical"
+		8 : "Wood"
+		9 : "Tech"
+	]
+	duration(integer) : "For how many seconds the rotation takes.  Default: 5, will also always be > wait" : 5
+	skinnum(integer) : "Skin number"
+	health(integer) : "Health>dmg before trigger" : 100
+	health2(integer) : "How much health to destroy the brush after it has come to a stop."
+	move_angles(string) : "Angles it will rotate toward if TargAngle flag is set (pitch yaw roll)."
+	duration(string) : "How many seconds the rotation toward move_angles takes."
+	angles(string) : "Sets the initial angle that the brush will move at (pitch yaw roll)."
+	mass(integer) : "This determines how much damage the falling boulder does." : 500
+	speed(integer) : "This sets how fast the brush will move (only if triggered)" : 100
+	delay(string) : "How long to wait before breaking away" : 0
+	wait(string) : "How long before it becomes SOLID_BBOX after being dislodged" : 0.3
+	fadeout(string) : "If the Fade flag is set, this is how long until it fades away"
+	noise(string) : "Sound to play when it hits."
+	count(integer) : "Number of times to play impact sound"
+	destroytarget(string) : "Destroytarget>trigger at destruction after coming to a rest"
+	bleft(string) : "Min b-box coords XYZ. Default = -16 -16 -16"
+	tright(string) :	"Max b-box coords XYZ. Default = 16 16 16"
+]
+@SolidClass base(FBreakaway, ArghBmodel) color(0 128 204) = func_breakaway : "Breakaway/falling brush" []
+
+//
+// FUNC_FORCE_WALL
+@SolidClass base(Appearflags, Targetname, Count1) color(255 0 0) = func_force_wall : "Force field"
+[
+	spawnflags(Flags) =
+	[
+		1 : "Start on" : 0
+	]
+	style(integer) : "Color" : 208
+	dmg(integer) : "Damage when touched" : 0
+]
+
+//
+// FUNC_GROUP
+@SolidClass color (200 200 200) = func_group : "Non-Entity Grouping" []
+
 // not visible in DM mode
 //
 @SolidClass base(Appearflags, Targetname, Target, Killtarget, Movewith) color(0 128 204) = func_explosive : "Exploding/Breakable brush"
