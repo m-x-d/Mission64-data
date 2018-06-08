@@ -520,7 +520,7 @@
 
 //
 // FUNC_BREAKAWAY
-@Baseclass base(Appearflags1, Targetname, Target, Killtarget, Movewith) = FBreakaway
+@Baseclass base(Appearflags, Targetname, Target, Killtarget, Movewith) = FBreakaway
 [
 	spawnflags(Flags) =
 	[
