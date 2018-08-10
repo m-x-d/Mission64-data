@@ -1,0 +1,6 @@
+md2mesh.0
+{
+  //alphatest
+  alpha 0.2
+  blendfunc blend
+}

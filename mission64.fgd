@@ -231,6 +231,16 @@
 	_sun_vector(string) : "Sunlight direction (z y z)" : "0 0 -1"
 	_sky_ambient(color1) : "Sky ambient" : "0 0 0"
 	_sky_surface(color1) : "Sky surface light" : "0 0 0"
+	_lightmap_scale(choices) : "Lightmap scale" : 0 =
+	[
+		0 : "Default"
+		1 : "1qu"
+		2 : "2qu"
+		4 : "4qu"
+		8 : "8qu"
+		16 : "16qu (default)"
+		32 : "32qu"
+	]
 ]
 
 //
