@@ -991,6 +991,20 @@
 	]
 ]
 
+//mxd
+@PointClass base(TremorEffects) flags(Angle) color(128 128 128) size(-8 -8 -8, 8 8 8) iconsprite("sprites/flare.spr") = misc_halo : "Halo"
+[
+	spawnflags(Flags) =
+	[
+		1 : "Ignore perspective scale" : 0
+		2 : "Distance-based rolling" : 0
+	]
+	usermodel(string) : "Sprite"
+	distance(integer) : "Fade start distance"
+	alpha(string) : "Max. transparency (0 .. 1)"
+	lip(integer) : "Angular fade (deg.)"
+]
+
 // The following three entities are eye-candy - they don't do anything
 @PointClass base(Appearflags) color(255 128 0) size(-32 -32 -16, 32 32 32) = misc_eastertank : "Tank Pimp" []
 @PointClass base(Appearflags) color(255 128 0) size(-32 -32 0, 32 32 32) = misc_easterchick : "Chick #1" []
@@ -1106,7 +1120,8 @@
 		2 : "Trigger Spawn" : 0
 		4 : "Sight" : 0
 		8 : "Friendly" : 0
-		16 : "Doesn't Gib" : 0
+		16 : "Don't Gib" : 0
+		32 : "Use homing rockets" : 0
 		128 : "Ignores Fire" : 0
 	]
 	blood_type(choices) : "Blood type" : 0 =
@@ -1114,7 +1129,9 @@
 		0 : "Default"
 		1 : "Green"
 		2 : "Robot sparks"
-	] 
+	]
+  health(integer) : "Health" 
+  mass(integer) : "Mass" 
 	dmgteam(string) : "Damage team"
 	combattarget(string) : "Point combat target"
 	deathtarget(string) : "Entity to trigger at death"
